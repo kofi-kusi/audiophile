@@ -2,6 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 export default function App(){
     return(
-        <h1>Hey</h1>
+        <h1 className="text-red-600">Hey</h1>
     )
 }
