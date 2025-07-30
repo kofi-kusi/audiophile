@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom"
 import hamburger from "../assets/shared/tablet/icon-hamburger.svg"
 import cartIcon from "../assets/shared/desktop/icon-cart.svg"
+import logo from "../assets/shared/desktop/logo.svg"
 
 
 export default function Header(){
@@ -9,10 +10,12 @@ export default function Header(){
             <button className="md:mr-8 lg:hidden">
                 <img src={hamburger} alt="hamburger icon" />
             </button>
-            <Link to="/" className="text-3xl font-black">audiophile</Link>
-            <nav className="hidden lg:flex justify-center items-center gap-5 font-bold">
+            <Link to="/">
+                <img src={logo} alt="logo" />
+            </Link>
+            <nav className="hidden lg:flex justify-center items-center gap-5 font-bold text-sm">
                 <NavLink to="/" className="tracking-widest">HOME</NavLink>
-                <NavLink to="/" className="tracking-widesttracking-widest">HEADPHONES</NavLink>
+                <NavLink to="/" className="tracking-widest">HEADPHONES</NavLink>
                 <NavLink to="/" className="tracking-widest">SPEAKERS</NavLink>
                 <NavLink to="/" className="tracking-widest">EARPHONES</NavLink>  
             </nav>
