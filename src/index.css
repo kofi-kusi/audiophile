@@ -8,12 +8,13 @@
     /* Custom colors */
     --color-*: initial;
     --color-white: #FFFFFF;
-    --color-black: #000000;
+    --color-black: #191919;
     --color-midnight: #101010;
     --color-burnt-orange: #D87D4A;
     --color-light-orange: #FBAF85;
     --color-lotion: #FAFAFA;
     --color-light-gray: #F1F1F1;
+    --color-gray: #979797;
 }
 
 body {
