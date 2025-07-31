@@ -5,6 +5,12 @@
     /* Custom fonts */
     --font-manrope: "Manrope";
 
+    /* Custom breakpoints */
+    --breakpoint-*: initial;
+    --breakpoint-sm: 320px;
+    --breakpoint-md: 480px;
+    --breakpoint-lg: 992px;
+
     /* Custom colors */
     --color-*: initial;
     --color-white: #FFFFFF;
