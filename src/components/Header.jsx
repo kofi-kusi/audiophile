@@ -6,7 +6,8 @@ import logo from "../assets/shared/desktop/logo.svg"
 
 export default function Header(){
     return(
-        <header className="text-white border-b-1 border-gray py-8 px-6 flex justify-between items-center md:max-w-6xl mx-auto md:px-0">
+        <>
+        <header className="text-white  py-8 px-6 flex justify-between items-center md:max-w-6xl mx-auto md:px-0">
             <button className="md:mr-8 lg:hidden">
                 <img src={hamburger} alt="hamburger icon" />
             </button>
@@ -23,5 +24,7 @@ export default function Header(){
                 <img src={cartIcon} alt="cart icon" />
             </button>
         </header>
+        <hr className="bg-white h-[2px] opacity-10"/>
+        </>
     )
 }
