@@ -6,7 +6,7 @@ import logo from "../assets/shared/desktop/logo.svg"
 
 export default function Header(){
     return(
-        <header className="bg-black text-white border-b-1 border-gray py-8 px-6 flex justify-between items-center md:max-w-6xl mx-auto md:px-0">
+        <header className="text-white border-b-1 border-gray py-8 px-6 flex justify-between items-center md:max-w-6xl mx-auto md:px-0">
             <button className="md:mr-8 lg:hidden">
                 <img src={hamburger} alt="hamburger icon" />
             </button>

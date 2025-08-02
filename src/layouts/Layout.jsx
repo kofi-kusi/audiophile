@@ -4,10 +4,16 @@ import { Outlet } from "react-router-dom";
 
 export default function Layout() {
   return (
-    <div className="bg-black md:px-5">  
-      <Header />
-      <Outlet />
-      <Footer />
+    <div>
+      <div className="bg-black md:px-6">
+        <Header />
+      </div>
+      <main className="md:px-6">
+        <Outlet />
+      </main>
+      <div className="bg-black md:px-6">
+        <Footer />
+      </div>
     </div>
   );
 }
