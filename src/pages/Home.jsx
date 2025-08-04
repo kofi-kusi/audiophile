@@ -2,10 +2,11 @@ import smImageHeader from "../assets/home/mobile/image-header.jpg";
 import mdImageHeader from "../assets/home/tablet/image-header.jpg";
 import lgImageHeader from "../assets/home/desktop/image-hero.jpg";
 import Button from "../components/ui/Button";
+import Category from "../components/ui/Category"
 
 export default function Home() {
   return (
-    <>
+    <main>
       {/* Hero section */}
       <div className="relative">
         <img src={smImageHeader} className="md:hidden" alt="Header image" />
@@ -19,7 +20,7 @@ export default function Home() {
           className="hidden lg:block"
           alt="Header image"
         />
-        <div className="absolute inset-0 max-w-6xl mx-auto flex justify-start px-6">
+        <div className="absolute inset-0 max-w-6xl mx-auto flex justify-start">
           <div className="text-white flex flex-col justify-center items-center text-center px-8  md:max-w-[380px] md:mx-auto md:px-0 lg:items-start lg:text-left lg:ml-0">
             <p className="uppercase opacity-50 text-sm tracking-[10px] mb-[16px] md:mb-[24px]">
               new product
@@ -35,6 +36,11 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
+
+      {/* Caterories */}
+      <div className="max-w-6xl mx-auto px-6 mt-6">
+        <Category />
+      </div>
+    </main>
   );
 }
