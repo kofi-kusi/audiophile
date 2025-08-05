@@ -5,7 +5,9 @@ import iconArrowRight from "../../assets/shared/desktop/icon-arrow-right.svg";
 export default function CategoryThumbnail({ category, imgURL}) {
   return (
     <>
-      <NavLink>
+      <NavLink
+      className="w-full"
+      >
         <div className="relative h-[217px] flex flex-col justify-end">
           <img
             className="absolute top-0 left-1/2 h-[150px] z-10 object-scale-down transform translate-x-[-50%]"
@@ -13,7 +15,7 @@ export default function CategoryThumbnail({ category, imgURL}) {
             alt="headphones category thumbnail"
           />
 
-          <div className="bg-light-gray flex flex-col items-center w-full h-[165px] rounded-lg pt-[88px] px-[108px] ">
+          <div className="bg-light-gray flex flex-col items-center h-[165px] rounded-lg justify-end p-5">
             <h2 className="uppercase text-[15px] font-bold leading-[24px] tracking-[1.3px]">
               {category}
             </h2>

@@ -21,7 +21,7 @@ export default function Home() {
           alt="Header image"
         />
         <div className="absolute inset-0 max-w-6xl mx-auto flex justify-start">
-          <div className="text-white flex flex-col justify-center items-center text-center px-8  md:max-w-[380px] md:mx-auto md:px-0 lg:items-start lg:text-left lg:ml-0">
+          <div className="text-white flex flex-col justify-center items-center text-center px-8  md:max-w-[380px] md:mx-auto lg:items-start lg:text-left lg:ml-0">
             <p className="uppercase opacity-50 text-sm tracking-[10px] mb-[16px] md:mb-[24px]">
               new product
             </p>
@@ -37,10 +37,15 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Caterories */}
-      <div className="max-w-6xl mx-auto px-6 mt-6">
+      {/* Home content */}
+      <div className="max-w-6xl mx-auto px-6 my-6">
         <Category />
+        <div>
+          
+        </div>
       </div>
+
+
     </main>
   );
 }

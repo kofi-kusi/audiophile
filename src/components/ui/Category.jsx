@@ -7,7 +7,7 @@ import CategoryThumbnail from "./CategoryThumbnail";
 
 export default function Category() {
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
       <CategoryThumbnail 
         category="headphones"
         imgURL={imgCategoryThumbnailHeadphones}
