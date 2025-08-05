@@ -12,10 +12,10 @@
     --breakpoint-lg: 992px;
 
     /* Custom colors */
-    --color-*: initial;
     --color-white: #FFFFFF;
     --color-black: #191919;
     --color-midnight: #101010;
+    --color-quartz: #4C4C4C;
     --color-burnt-orange: #D87D4A;
     --color-light-orange: #FBAF85;
     --color-lotion: #FAFAFA;
