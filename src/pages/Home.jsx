@@ -54,7 +54,7 @@ export default function Home() {
       </div>
 
       {/* Home content */}
-      <div className="max-w-6xl mx-auto px-6 my-6">
+      <div className="max-w-6xl mx-auto px-6 mt-10 md:mt-24 lg:mt-30">
         <Category />
 
         <div className="relative bg-burnt-orange text-white mt-30 py-12 rounded-lg overflow-hidden">
