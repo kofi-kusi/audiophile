@@ -7,8 +7,8 @@ import logo from "../assets/shared/desktop/logo.svg"
 export default function Header(){
     return(
         <>
-        <header className="bg-black text-white px-6 ">
-            <div className="py-8 px-6 flex justify-between items-center md:max-w-6xl md:mx-auto md:px-0">
+        <header className="bg-black text-white md:px-6">
+            <div className="py-8 px-6 md:px-0 flex justify-between items-center md:max-w-6xl md:mx-auto">
             <button className="md:mr-8 lg:hidden">
                 <img src={hamburger} alt="hamburger icon" />
             </button>

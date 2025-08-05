@@ -8,7 +8,7 @@ import instagramIcon from "../assets/shared/desktop/icon-instagram.svg"
 export default function Footer(){
     return(
         <footer className="bg-black px-6">
-        <div className="grid grid-cols-1 justify-center items-center gap-10 text-white text-center py-10 px-6 md:max-w-6xl mx-auto md:px-0 md:auto-rows-auto md:grid-cols-2 md:text-left">
+        <div className="grid grid-cols-1 justify-center items-center gap-10 text-white text-center py-10 px-6 md:max-w-6xl mx-auto md:auto-rows-auto md:grid-cols-2 md:text-left">
             <Link to="/" className="text-3xl font-black flex justify-center md:justify-start md:col-span-full lg:col-span-1 lg:col-end-2 lg:row-start-1 lg:row-end-2">
                 <img src={logo} alt="" />
             </Link>
