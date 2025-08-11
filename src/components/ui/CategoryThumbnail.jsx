@@ -6,7 +6,8 @@ export default function CategoryThumbnail({ category, imgURL}) {
   return (
     <>
       <NavLink
-      className="w-full"
+      className="group w-full"
+      to={`/${category}`}
       >
         <div className="relative h-[217px] flex flex-col justify-end">
           <img
@@ -16,11 +17,11 @@ export default function CategoryThumbnail({ category, imgURL}) {
           />
 
           <div className="bg-light-gray flex flex-col items-center h-[165px] rounded-lg justify-end p-5">
-            <h2 className="uppercase text-[15px] font-bold leading-[24px] tracking-[1.3px]">
+            <h2 className="uppercase text-[15px] font-bold leading-[24px] tracking-[1.3px] hover:text-black">
               {category}
             </h2>
             <div className="flex gap-2 ">
-              <p className="opacity-50 uppercase text-[13px] font-bold tracking-wide">
+              <p className="group-hover:text-burnt-orange opacity-50 uppercase text-[13px] font-bold tracking-wide">
                 shop
               </p>
               <img className="object-scale-down" src={iconArrowRight} alt="" />
