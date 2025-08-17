@@ -17,26 +17,26 @@ export default function Header() {
           </Link>
           <nav className="hidden lg:flex justify-center items-center gap-5 font-bold text-sm">
             <NavLink 
-             to="/" 
+             to="." 
              className={clsx(`${ (isAtive) => isAtive && "text-burnt-orange"} tracking-widest uppercase hover:text-burnt-orange`)}
 
              >
               home
             </NavLink>
             <NavLink 
-             to="/headphones" 
+             to="headphones" 
              className={clsx(`${ (isAtive) => isAtive && "text-burnt-orange"} tracking-widest uppercase hover:text-burnt-orange`)}
              >
               headphones
             </NavLink>
             <NavLink 
-             to="/" 
+             to="speakers" 
              className={clsx(`${ (isAtive) => isAtive && "text-burnt-orange"} tracking-widest uppercase hover:text-burnt-orange`)}
              >
               speakers
             </NavLink>
             <NavLink 
-             to="/" 
+             to="earphones" 
              className={clsx(`${ (isAtive) => isAtive && "text-burnt-orange"} tracking-widest uppercase hover:text-burnt-orange`)}
              >
               earphones

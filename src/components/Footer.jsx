@@ -15,10 +15,10 @@ export default function Footer(){
                 <img src={logo} alt="" />
             </Link>
             <nav className="flex flex-col justify-center items-center gap-5 font-bold text-sm md:flex-row md:justify-start md:col-span-full lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2 lg:justify-end">
-                <NavLink to="/" className="tracking-widest  hover:text-burnt-orange">HOME</NavLink>
-                <NavLink to="/" className="tracking-widest  hover:text-burnt-orange">HEADPHONES</NavLink>
-                <NavLink to="/" className="tracking-widest  hover:text-burnt-orange">SPEAKERS</NavLink>
-                <NavLink to="/" className="tracking-widest  hover:text-burnt-orange">EARPHONES</NavLink>  
+                <NavLink to="/" className="tracking-widest uppercase hover:text-burnt-orange">home</NavLink>
+                <NavLink to="headphones" className="tracking-widest uppercase hover:text-burnt-orange">headphones</NavLink>
+                <NavLink to="speakers" className="tracking-widest uppercase hover:text-burnt-orange">speakers</NavLink>
+                <NavLink to="earphones" className="tracking-widest uppercase hover:text-burnt-orange">earphones</NavLink>  
             </nav>
             <p className="opacity-50 md:col-span-full lg:col-start-1 lg:col-end-2 lg:row-start-2 lg:row-end-3">Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
             <p className="text-lg font-bold opacity-50 lg:col-start-1 lg:col-end-3 lg:row-start-3 lg:row-end-4">Copyright 2021. All Rights Reserved</p>
