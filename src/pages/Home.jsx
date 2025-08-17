@@ -60,12 +60,12 @@ export default function Home() {
         <div className="relative bg-burnt-orange text-white mt-30 py-12 rounded-lg overflow-hidden">
 
           <img
-            className="absolute inset-0 -translate-y-9 w-[1000px]"
+            className="absolute inset-0 -translate-y-9 w-[1000px] z-1"
             src={patternCircles}
             alt=""
           />
           <div className="px-6 inset-0 flex flex-col justify-center items-center lg:flex-row lg:gap-32">
-            <div>
+            <div className="z-2">
               <img
                 className="w-[10rem] translate-0 object-scale-down mb-8 md:hidden lg:hidden"
                 src={smImgSpeakerzx9}
@@ -83,7 +83,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
+            <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-left z-2">
               <h3 className="text-4xl leading-4xl max-w-[250px] md:max-w-[350px] text-center tracking-[1.2px] uppercase font-bold mb-[24px]  md:text-[56px] md:leading-[58px] md:tracking-[2px] lg:text-left">
                 ZX9 SPEAKER
               </h3>
@@ -92,7 +92,7 @@ export default function Home() {
                 deliver truly remarkable sound.
               </p>
               <ButtonOne bg="black" color="white">
-                see product
+                see product 
               </ButtonOne>
             </div>
 

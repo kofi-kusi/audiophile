@@ -1,22 +1,25 @@
 import { useNavigate } from "react-router-dom";
+import clsx from "clsx";
 
-export default function ButtonOne(props) {
-  const navigate = useNavigate()
+export default function ButtonOne({ bg, children }) {
+  const navigate = useNavigate();
 
-  function handleClick(){
-    navigate("/")
+  function handleClick() {
+    navigate("/");
   }
 
   return (
     <button
-      className={`w-[160px] h-[48px] bg-${props.bg} text-${
-        props.color
-      } uppercase tracking-[1px] cursor-pointer font-bold text-[13px] px-[30px] py-[15px] ${
-        props.bg === "black" ? "hover:bg-quartz" : "hover:bg-light-orange"
-      }`}
+      className={clsx(
+        `${
+          bg === "black"
+            ? "w-[160px] h-[48px] bg-black text-white uppercase tracking-[1px] cursor-pointer font-bold text-[13px] px-[30px] py-[15px] hover:bg-quartz"
+            : "w-[160px] h-[48px] bg-burnt-orange text-white uppercase tracking-[1px] cursor-pointer font-bold text-[13px] px-[30px] py-[15px] hover:bg-light-orange"
+        }`
+      )}
       onClick={handleClick}
     >
-      {props.children}
+      {children}
     </button>
   );
 }
