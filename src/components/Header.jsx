@@ -5,6 +5,10 @@ import logo from "../assets/shared/desktop/logo.svg";
 import clsx from "clsx";
 
 export default function Header() {
+  const isActiveStyle = {
+    color: "#D87D4A"
+  }
+
   return (
     <>
       <header className="bg-black text-white md:px-6">
@@ -18,26 +22,29 @@ export default function Header() {
           <nav className="hidden lg:flex justify-center items-center gap-5 font-bold text-sm">
             <NavLink 
              to="." 
-             className={clsx(`${ (isAtive) => isAtive && "text-burnt-orange"} tracking-widest uppercase hover:text-burnt-orange`)}
-
+             className={clsx(`tracking-widest uppercase hover:text-burnt-orange`)}
+             style={({isActive}) => isActive ? isActiveStyle : null}
              >
               home
             </NavLink>
             <NavLink 
              to="headphones" 
              className={clsx(`${ (isAtive) => isAtive && "text-burnt-orange"} tracking-widest uppercase hover:text-burnt-orange`)}
+             style={({isActive}) => isActive ? isActiveStyle : null}
              >
               headphones
             </NavLink>
             <NavLink 
              to="speakers" 
              className={clsx(`${ (isAtive) => isAtive && "text-burnt-orange"} tracking-widest uppercase hover:text-burnt-orange`)}
+             style={({isActive}) => isActive ? isActiveStyle : null}
              >
               speakers
             </NavLink>
             <NavLink 
              to="earphones" 
              className={clsx(`${ (isAtive) => isAtive && "text-burnt-orange"} tracking-widest uppercase hover:text-burnt-orange`)}
+             style={({isActive}) => isActive ? isActiveStyle : null}
              >
               earphones
             </NavLink>
