@@ -1,3 +1,7 @@
+import CategoryHeader from "../../../components/ui/CategoryHeader"
+
 export default function Headphones(){
-    return <h1>Headphones page</h1>
+    return(
+        <CategoryHeader title={"headphones"}/>
+    )
 }

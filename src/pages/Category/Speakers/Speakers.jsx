@@ -1,3 +1,7 @@
+import CategoryHeader from "../../../components/ui/CategoryHeader"
+
 export default function Speakers(){
-    return <h1>Speakers page</h1>
+    return(
+        <CategoryHeader title={"speakers"}/>
+    )
 }
