@@ -1,27 +1,33 @@
 import React from "react";
-import mobileHeaderImg from "../assets/home/mobile/image-header.jpg";
+import mobileHeroImg from "../assets/home/mobile/image-header.jpg";
+import tabletHeroImg from "../assets/home/tablet/image-header.jpg";
+import desktopHeroImg from "../assets/home/desktop/image-hero.jpg";
 import Button from "./ui/Button";
 
 export default function Hero() {
   return (
-    <div className="absolute -top-6 -z-1">
-      <div className="relative flex flex-col justify-center items-center">
-        <picture className="inset-0 ">
-          <img src={mobileHeaderImg} alt="" className="" />
-        </picture>
+    <div className="absolute top-0 -z-1 bg-[#191919] w-full">
+      <div className="max-w-[1150px] mx-auto md:px-6">
+        <div className="relative flex flex-col justify-center items-center lg:items-start">
+          <picture className="inset-0 ">
+            <source srcSet={desktopHeroImg} media="(min-width: 992px)" />
+            <source srcSet={tabletHeroImg} media="(min-width: 600px)" />
+            <img src={mobileHeroImg} alt="" />
+          </picture>
 
-        <div className="max-w-[328px] absolute text-center flex flex-col justify-center items-center">
-          <p className="text-[14px] uppercase leading-[19px] tracking-[10px] text-[#FFFFFF]/50 mb-[16px]">
-            new product
-          </p>
-          <h1 className="text-[36px] font-bold leading-[40px] tracking-[2px] text-[#FFFFFF] uppercase mb-[24px]">
-            XX99 Mark II Headphones
-          </h1>
-          <p className="text-[#FFFFFF]/75 leading-[25px] mb-[28px] font-medium">
-            Experience natural, lifelike audio and exceptional build quality
-            made for the passionate music enthusiast.
-          </p>
-          <Button text="see product"/>
+          <div className="max-w-[328px] md:max-w-[379px] absolute text-center flex flex-col justify-between items-center lg:items-start lg:text-left">
+            <p className="text-[14px] uppercase leading-[19px] tracking-[10px] text-[#FFFFFF]/50 mb-[16px]">
+              new product
+            </p>
+            <h1 className="text-[36px] font-bold leading-[40px] tracking-[2px] text-[#FFFFFF] uppercase mb-[24px] md:text-[56px] md:leading-[58px]">
+              XX99 Mark II Headphones
+            </h1>
+            <p className="text-[#FFFFFF]/75 leading-[25px] mb-[28px] font-medium">
+              Experience natural, lifelike audio and exceptional build quality
+              made for the passionate music enthusiast.
+            </p>
+            <Button text="see product" />
+          </div>
         </div>
       </div>
     </div>

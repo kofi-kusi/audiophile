@@ -4,7 +4,7 @@ import logo from "../../assets/shared/desktop/logo.svg";
 
 export default function Logo() {
   return (
-    <Link>
+    <Link to="/" className="md:mr-auto md:ml-8 lg:m-0">
       <img src={logo} alt="Audiophile logo" />
     </Link>
   );

@@ -1,12 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 @import "tailwindcss";
 
 @theme {
-    --font-manrope: "Manrope", sans-serif; 
+  --font-manrope: "Manrope", sans-serif;
+  --breakpoint-*: initial;
+  --breakpoint-sm: 3px;
+  --breakpoint-md: 600px;
+  --breakpoint-lg: 992px;
 }
 
-*, ::before, ::after {
-    box-sizing: border-box;
-    font-family: manrope;
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  font-family: manrope;
 }
-
