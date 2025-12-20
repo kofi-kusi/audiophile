@@ -8,7 +8,7 @@ import Button from "./ui/Button";
 
 export default function ZX9Speaker() {
   return (
-    <div className="relative bg-[#D87D4A] py-[55px] px-[20px] flex flex-col gap-8 items-center text-[#FFFFFF] rounded-[8px] lg:flex-row lg:gap-32 lg:px-24 mb-6 overflow-hidden">
+    <div className="relative bg-[#D87D4A] py-[55px] px-[20px] flex flex-col gap-8 items-center text-[#FFFFFF] rounded-[8px] lg:flex-row lg:gap-32 lg:px-24 overflow-hidden">
       <img
         src={patternCircles}
         alt=""
@@ -31,7 +31,7 @@ export default function ZX9Speaker() {
           Upgrade to premium speakers that are phenomenally built to deliver
           truly remarkable sound.
         </p>
-        <Button text="see product" bg="black" />
+        <Button text="see product" variant="black" />
       </div>
     </div>
   );
