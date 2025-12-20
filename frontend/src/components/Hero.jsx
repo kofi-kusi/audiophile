@@ -6,10 +6,10 @@ import Button from "./ui/Button";
 
 export default function Hero() {
   return (
-    <div className="absolute top-0 -z-1 bg-[#191919] w-full">
+    <div className="relative bg-[#191919] w-full">
       <div className="max-w-[1150px] mx-auto md:px-6">
-        <div className="relative flex flex-col justify-center items-center lg:items-start">
-          <picture className="inset-0 ">
+        <div className="flex flex-col justify-center items-center lg:items-start">
+          <picture className="w-full h-full">
             <source srcSet={desktopHeroImg} media="(min-width: 992px)" />
             <source srcSet={tabletHeroImg} media="(min-width: 600px)" />
             <img src={mobileHeroImg} alt="" />
