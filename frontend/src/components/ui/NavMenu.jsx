@@ -24,7 +24,7 @@ export default function NavMenu() {
   const activeClasses =
     "font-bold text-[#D87D4A] uppercase text-[13px] leading-[25px] tracking-[2px]";
   const baseClasses =
-    "font-bold text-white uppercase text-[13px] leading-[25px] tracking-[2px] hover:text-[#D87D4A]";
+    "font-bold text-white uppercase text-[13px] leading-[25px] tracking-[2px] hover:text-[#D87D4A] transition-colors";
 
   const getNavClasses = ({ isActive }) =>
     isActive ? activeClasses : baseClasses;
