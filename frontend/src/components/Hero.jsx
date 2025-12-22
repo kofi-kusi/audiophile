@@ -6,7 +6,7 @@ import Button from "./ui/Button";
 
 export default function Hero() {
   return (
-    <div className="relative bg-[#191919] w-full">
+    <div className="bg-[#191919] w-full -translate-y-20 lg:translate-y-0 z-1">
       <div className="max-w-[1150px] mx-auto md:px-6">
         <div className="flex flex-col justify-center items-center lg:items-start">
           <picture className="w-full h-full">

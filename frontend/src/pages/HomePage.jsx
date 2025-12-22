@@ -6,13 +6,14 @@ import BestGear from "../components/BestGear";
 
 export default function HomePage() {
   return (
-    <>
-      <Hero />
-      <main className="max-w-[1150px] mx-auto px-6">
+      <main className="relative">
+        <Hero />
+        <div className="max-w-[1150px] mx-auto px-6">
         <CategoriesThumbnail />
         <TopProducts />
         <BestGear />
+        </div>
       </main>
-    </>
+
   );
 }
