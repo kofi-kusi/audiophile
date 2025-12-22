@@ -5,7 +5,7 @@ import tabletBestGearImg from "../assets/shared/tablet/image-best-gear.jpg";
 
 export default function BestGear() {
   return (
-    <div className="flex flex-col items-center gap-6 mb-28 lg:flex-row-reverse lg:justify-between">
+    <div className="flex flex-col items-center gap-6 my-28 lg:flex-row-reverse lg:justify-between lg:my-40">
       <picture className="">
         <source
           srcset={desktopBestGearImg}
