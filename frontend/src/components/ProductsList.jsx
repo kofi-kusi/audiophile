@@ -6,7 +6,7 @@ export default function ProductsList({ products }) {
 
   const orderedProducts = [...newProducts, ...oldProducts];
   return (
-    <div className="mt-16 md:mt-30 lg:mt-40 flex flex-col gap-30">
+    <div className="my-16 md:my-30 lg:my-40 flex flex-col gap-30">
       {orderedProducts.map((product, index) => (
         <CategoryPageItem product={product} index={index} />
       ))}
