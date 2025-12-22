@@ -1,9 +1,14 @@
 import React from "react";
 import Button from "./ui/Button";
 
-export default function CategoryPageItem({ product }) {
+export default function CategoryPageItem({ product, index }) {
+  const normal = "flex flex-col gap-8 items-center lg:flex-row lg:gap-30";
+  const reversed =
+    "flex flex-col gap-8 items-center lg:flex-row-reverse lg:gap-30";
+
+  const getClasses = index % 2 !== 0 ? reversed : normal;
   return (
-    <div className="flex flex-col gap-8 items-center lg:flex-row lg:gap-30">
+    <div className={getClasses}>
       <picture className="lg:w-1/2">
         <source
           srcSet={product.categoryImage.desktop}

@@ -12,7 +12,6 @@ const router = createBrowserRouter([
       {
         path: ":category",
         Component: CategoryPage,
-        children: [{ path: "earphones" }],
       },
     ],
   },
