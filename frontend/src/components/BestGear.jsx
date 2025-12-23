@@ -8,12 +8,12 @@ export default function BestGear() {
     <div className="flex flex-col items-center gap-6 my-28 lg:flex-row-reverse lg:justify-between lg:my-40">
       <picture className="">
         <source
-          srcset={desktopBestGearImg}
+          srcSet={desktopBestGearImg}
           media="(min-width: 992px)"
           className=""
         />
         <source
-          srcset={tabletBestGearImg}
+          srcSet={tabletBestGearImg}
           media="(min-width: 600px)"
           className=""
         />
