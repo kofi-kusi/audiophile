@@ -20,7 +20,7 @@ export default function CategoriesThumbnail() {
       <CategoryLink
         text="earphones"
         img={earphoneThumbnailImg}
-        url="/headphones"
+        url="/earphones"
       />
     </div>
   );
