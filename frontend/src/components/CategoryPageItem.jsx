@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./ui/Button";
 
 export default function CategoryPageItem({ product, index }) {
+  console.log(product)
   const normal = "flex flex-col gap-8 items-center lg:flex-row lg:gap-30";
   const reversed =
     "flex flex-col gap-8 items-center lg:flex-row-reverse lg:gap-30";
@@ -36,7 +37,7 @@ export default function CategoryPageItem({ product, index }) {
         <p className="font-normal leading-[25px] opacity-50 tracking-[0px]">
           {product.description}
         </p>
-        <Button text="see product" />
+        <Button text="see product" to={product.slug}/>
       </div>
     </div>
   );
