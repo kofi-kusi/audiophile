@@ -31,7 +31,7 @@ export default function CategoryPageItem({ product, index }) {
             new product
           </p>
         )}
-        <h4 className="text-[28px] font-bold tracking-[2px] uppercase md:text-[40px] tracking-[1.5px] md:leading-[44px]">
+        <h4 className="text-[28px] font-bold tracking-[2px] uppercase md:text-[40px] tracking-[1px] md:leading-[44px]">
           {product.name}
         </h4>
         <p className="font-normal leading-[25px] opacity-50 tracking-[0px]">
