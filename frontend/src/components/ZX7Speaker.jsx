@@ -10,12 +10,12 @@ export default function ZX7Speaker() {
       <picture className="w-full bg-cover">
         <source
           srcset={desktopSpeakerZX7Img}
-          media="(min-width: 992px)"
+          media="(min-width: 1000px)"
           className=""
         />
         <source
           srcset={tabletSpeakerZX7Img}
-          media="(min-width: 600px)"
+          media="(min-width: 690px)"
           className=""
         />
         <img src={mobileSpeakerZX7Img} alt="" className="w-full" />

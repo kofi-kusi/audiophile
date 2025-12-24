@@ -15,13 +15,17 @@ export default function ZX9Speaker() {
         className="absolute -top-[95px] bg-cover "
       />
       <picture className="w-[208px] md:w-[250px] lg:w-[500px] z-1 lg:translate-y-18">
-        <source srcset={desktopSpeakerZX9Img} media="(min-width: 992px)" className=""/>
-        <source srcset={tabletSpeakerZX9Img} media="(min-width: 600px)" className="" />
-        <img
-          src={mobileSpeakerZX9Img}
-          alt=""
-          className="object-scale-down"
+        <source
+          srcset={desktopSpeakerZX9Img}
+          media="(min-width: 1000px)"
+          className=""
         />
+        <source
+          srcset={tabletSpeakerZX9Img}
+          media="(min-width: 690px)"
+          className=""
+        />
+        <img src={mobileSpeakerZX9Img} alt="" className="object-scale-down" />
       </picture>
       <div className="flex flex-col gap-6 items-center max-w-[350px] text-center lg:items-start lg:text-left z-1">
         <h3 className="text-[36px] font-bold uppercase w-[260px] md:w-full md:text-[56px] leading-[40px] tracking-[1.3px] md:leading-[58px] md:tracking-[2px] uppercase">

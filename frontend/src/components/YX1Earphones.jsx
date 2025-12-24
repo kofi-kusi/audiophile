@@ -10,12 +10,12 @@ export default function YX1Earphones() {
       <picture className="md:w-1/2">
         <source
           srcset={desktopEarphonesYX1Img}
-          media="(min-width: 992px)"
+          media="(min-width: 1000px)"
           className=""
         />
         <source
           srcset={tabletEarphonesYX1Img}
-          media="(min-width: 600px)"
+          media="(min-width: 690px)"
           className=""
         />
         <img src={mobileEarphonesYX1Img} alt="" className="rounded-lg" />

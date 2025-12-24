@@ -4,9 +4,9 @@
 @theme {
   --font-manrope: "Manrope", sans-serif;
   --breakpoint-*: initial;
-  --breakpoint-sm: 3px;
-  --breakpoint-md: 600px;
-  --breakpoint-lg: 992px;
+  --breakpoint-sm: 300px;
+  --breakpoint-md: 690px;
+  --breakpoint-lg: 1000px;
 }
 
 *,
