@@ -26,7 +26,7 @@ export default function Hero() {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <Button text="see product" />
+            <Button text="see product" to="/headphones/xx99-mark-two-headphones"/>
           </div>
         </div>
       </div>
