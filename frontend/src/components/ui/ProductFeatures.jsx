@@ -6,7 +6,7 @@ export default function ProductFeatures({ features, includes }) {
   return (
     <div className="flex flex-col gap-28 lg:flex-row">
       <div className="flex flex-col gap-6 lg:max-w-[635px]">
-        <h5 className="text-[24px] leading-[33px] tracking-[1.7px] font-bold uppercase">
+        <h5 className="text-[24px] leading-[33px] tracking-[1.7px] font-bold uppercase md:text-[32px] md:leading-[36px] md:tracking-[1.3px]">
           Features
         </h5>
         <div className="font-normal leading-[25px] opacity-50 tracking-normal">
@@ -17,7 +17,7 @@ export default function ProductFeatures({ features, includes }) {
         </div>
       </div>
       <div className="flex flex-col gap-6 md:flex-row lg:flex-col items-start">
-        <h5 className="text-[24px] leading-[33px] tracking-[1.7px] font-bold uppercase md:w-1/2 lg:w-full">
+        <h5 className="text-[24px] leading-[33px] tracking-[1.7px] font-bold uppercase md:w-1/2 md:text-[32px] md:leading-[36px] md:tracking-[1.3px] lg:w-full">
           In the box
         </h5>
         <ul className="flex flex-col gap-2">
