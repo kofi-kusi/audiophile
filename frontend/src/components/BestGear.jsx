@@ -9,12 +9,12 @@ export default function BestGear() {
       <picture className="">
         <source
           srcSet={desktopBestGearImg}
-          media="(min-width: 992px)"
+          media="(min-width: 1000px)"
           className=""
         />
         <source
           srcSet={tabletBestGearImg}
-          media="(min-width: 600px)"
+          media="(min-width: 690px)"
           className=""
         />
         <img src={mobileBestGearImg} alt="" className="rounded-lg" />

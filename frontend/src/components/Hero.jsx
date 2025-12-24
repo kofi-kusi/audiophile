@@ -10,8 +10,8 @@ export default function Hero() {
       <div className="max-w-[1150px] mx-auto md:px-6">
         <div className="flex flex-col justify-center items-center lg:items-start">
           <picture className="w-full h-full">
-            <source srcSet={desktopHeroImg} media="(min-width: 992px)" />
-            <source srcSet={tabletHeroImg} media="(min-width: 600px)" />
+            <source srcSet={desktopHeroImg} media="(min-width: 1000px)" />
+            <source srcSet={tabletHeroImg} media="(min-width: 690px)" />
             <img src={mobileHeroImg} alt="" />
           </picture>
 

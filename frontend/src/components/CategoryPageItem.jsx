@@ -2,7 +2,6 @@ import React from "react";
 import Button from "./ui/Button";
 
 export default function CategoryPageItem({ product, index }) {
-  console.log(product)
   const normal = "flex flex-col gap-8 items-center lg:flex-row lg:gap-30";
   const reversed =
     "flex flex-col gap-8 items-center lg:flex-row-reverse lg:gap-30";
@@ -13,11 +12,11 @@ export default function CategoryPageItem({ product, index }) {
       <picture className="lg:w-1/2">
         <source
           srcSet={product.categoryImage.desktop}
-          media="(min-width: 992px)"
+          media="(min-width: 1000px)"
         />
         <source
           srcSet={product.categoryImage.tablet}
-          media="(min-width: 600px)"
+          media="(min-width: 690px)"
         />
         <img
           src={product.categoryImage.mobile}
@@ -37,7 +36,7 @@ export default function CategoryPageItem({ product, index }) {
         <p className="font-normal leading-[25px] opacity-50 tracking-[0px]">
           {product.description}
         </p>
-        <Button text="see product" to={product.slug}/>
+        <Button text="see product" to={product.slug} />
       </div>
     </div>
   );
