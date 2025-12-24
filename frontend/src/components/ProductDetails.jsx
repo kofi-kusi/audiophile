@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "./ui/Button";
+import ProductFeatures from "./ui/ProductFeatures";
 
 export default function ProductDetails({ product }) {
   const [quantity, setQuantity] = useState(1);
@@ -13,18 +14,18 @@ export default function ProductDetails({ product }) {
     setQuantity((prev) => prev + 1);
   }
   return (
-    <div className="mt-6 lg:mt-14">
-      <div className="flex flex-col md:flex-row md:gap-25 md:items-center">
-        <picture className="md:min-w-[281px]">
-          <source srcSet={product.image.desktop} media="(min-width: 992px)" />
-          <source srcSet={product.image.tablet} media="(min-width: 600px)" />
+    <div className="mt-6 lg:mt-14 flex flex-col gap-22 md:gap-30 lg:gap-40">
+      <div className="flex flex-col gap-8 md:flex-row md:gap-18 md:items-center">
+        <picture className="md:min-w-[280px]">
+          <source srcSet={product.image.desktop} media="(min-width: 1000px)" />
+          <source srcSet={product.image.tablet} media="(min-width: 690px)" />
           <img
             src={product.image.mobile}
             alt={product.name}
             className="rounded-lg"
           />
         </picture>
-        <div className="flex flex-col justify-between gap-6 items-start mt-8 max-w-[445px] max-h-[400px]">
+        <div className="flex flex-col gap-6 items-start  max-w-[445px] md:max-h-[400px]">
           {product.new && (
             <p className="text-[14px] uppercase leading-[19px] tracking-[10px] text-[#D87D4A]">
               new product
@@ -59,6 +60,10 @@ export default function ProductDetails({ product }) {
           </div>
         </div>
       </div>
+      <ProductFeatures
+        features={product.features}
+        includes={product.includes}
+      />
     </div>
   );
 }
