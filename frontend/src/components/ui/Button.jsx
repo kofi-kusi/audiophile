@@ -17,7 +17,7 @@ export default function Button({ text, variant, to }) {
         : orangeBtn;
   return (
     <Link to={to}>
-      <button className={getBtnVariant}>{text}</button>;
+      <button className={getBtnVariant}>{text}</button>
     </Link>
   );
 }

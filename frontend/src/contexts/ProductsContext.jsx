@@ -1,4 +1,4 @@
-import React, { Children, createContext } from 'react'
+import React, { createContext } from 'react'
 import productList from "../data.json"
 
 const ProductsContext = createContext()
