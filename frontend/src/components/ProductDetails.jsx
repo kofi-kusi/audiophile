@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "./ui/Button";
 import ProductFeatures from "./ui/ProductFeatures";
 import ProductGallery from "./ui/ProductGallery";
+import OtherProducts from "./ui/OtherProducts";
 
 export default function ProductDetails({ product }) {
   const [quantity, setQuantity] = useState(1);
@@ -66,6 +67,7 @@ export default function ProductDetails({ product }) {
         includes={product.includes}
       />
       <ProductGallery gallery={product.gallery}/>
+      <OtherProducts others={product.others}/>
     </div>
   );
 }
