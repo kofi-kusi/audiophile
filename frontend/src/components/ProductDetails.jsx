@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "./ui/Button";
 import ProductFeatures from "./ui/ProductFeatures";
+import ProductGallery from "./ui/ProductGallery";
 
 export default function ProductDetails({ product }) {
   const [quantity, setQuantity] = useState(1);
@@ -64,6 +65,7 @@ export default function ProductDetails({ product }) {
         features={product.features}
         includes={product.includes}
       />
+      <ProductGallery gallery={product.gallery}/>
     </div>
   );
 }
