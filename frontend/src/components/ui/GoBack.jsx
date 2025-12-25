@@ -1,12 +1,18 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
-export default function GoBack({ to }) {
+export default function GoBack() {
+  const navigate = useNavigate()
+  function handleGoBack() {
+    if (window.history.length > 1) {
+      navigate(-1)
+    }else{
+      navigate("/")
+    }
+  }
   return (
-    <Link to={to}>
-      <button className="font-medium leading-[25px] tracking-normal opacity-50">
-        Go Back
-      </button>
-    </Link>
+    <button className="font-medium leading-[25px] tracking-normal opacity-50" onClick={handleGoBack}>
+      Go Back
+    </button>
   );
 }

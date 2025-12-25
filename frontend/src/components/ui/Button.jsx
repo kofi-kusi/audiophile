@@ -1,7 +1,10 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 export default function Button({ text, variant, to }) {
+  const location = useLocation();
+  const from = { from: location.pathname };
+
   const blackBtn =
     "bg-[#000000] py-[15px] font-bold uppercase text-[#FFFFFF] text-[13px] tracking-[1px] w-[160px] cursor-pointer hover:bg-[#4C4C4C] transition-colors";
   const orangeBtn =
@@ -16,7 +19,7 @@ export default function Button({ text, variant, to }) {
         ? outlineBtn
         : orangeBtn;
   return (
-    <Link to={to}>
+    <Link to={to} state={from}>
       <button className={getBtnVariant}>{text}</button>
     </Link>
   );

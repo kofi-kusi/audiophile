@@ -24,7 +24,7 @@ export default function ZX7Speaker() {
         <h4 className="text-[28px] font-bold uppercase leading-[28px] tracking-[2px]">
           ZX7 SPEAKER
         </h4>
-        <Button text="see product" variant="outline" to="/speakers/zx7-speaker"/>
+        <Button text="see product" variant="outline" to="/speakers/zx7-speaker" />
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ export default function YX1Earphones() {
         <h4 className="text-[28px] font-bold uppercase leading-[28px] tracking-[2px]">
           YX1 EARPHONES
         </h4>
-        <Button text="see product" variant="outline" to="/earphones/yx1-earphones"/>
+        <Button text="see product" variant="outline" to="/earphones/yx1-earphones" />
       </div>
     </div>
   );
