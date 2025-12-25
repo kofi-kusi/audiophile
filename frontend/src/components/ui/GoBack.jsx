@@ -11,7 +11,7 @@ export default function GoBack() {
     }
   }
   return (
-    <button className="font-medium leading-[25px] tracking-normal opacity-50" onClick={handleGoBack}>
+    <button className="font-medium leading-[25px] tracking-normal opacity-50 cursor-pointer" onClick={handleGoBack}>
       Go Back
     </button>
   );
