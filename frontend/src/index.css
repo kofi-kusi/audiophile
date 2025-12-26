@@ -9,6 +9,10 @@
   --breakpoint-lg: 1000px;
 }
 
+:root {
+  --header-height: 90px;
+}
+
 *,
 ::before,
 ::after {
