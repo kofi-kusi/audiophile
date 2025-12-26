@@ -3,12 +3,14 @@ import Button from "./ui/Button";
 import ProductFeatures from "./ui/ProductFeatures";
 import ProductGallery from "./ui/ProductGallery";
 import OtherProducts from "./ui/OtherProducts";
+import { useCart } from "../hooks/useCart";
 
 export default function ProductDetails({ product }) {
+  const { addToCart } = useCart()
   const [quantity, setQuantity] = useState(1);
 
   function decreaseQuantity() {
-    if (quantity <= 0) return;
+    if (quantity <= 1) return;
     setQuantity((prev) => prev - 1);
   }
 
@@ -58,7 +60,12 @@ export default function ProductDetails({ product }) {
                 +
               </button>
             </div>
-            <Button text="add to cart" />
+            <button
+              onClick={() => addToCart(product, quantity)}
+              className="bg-[#D87D4A] py-[15px] font-bold uppercase text-[#FFFFFF] text-[13px] tracking-[1px] w-[160px] hover:bg-[#FBAF85] transition-colors cursor-pointer"
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
