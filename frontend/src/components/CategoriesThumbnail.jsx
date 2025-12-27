@@ -6,7 +6,7 @@ import speakersThumbnailImg from "../assets/shared/desktop/image-category-thumbn
 
 export default function CategoriesThumbnail() {
   return (
-    <div className="mt-20 flex flex-col md:flex-row gap-2 md:gap-2.5 lg:gap-8 h-full">
+    <div className="mt-20 flex flex-col md:flex-row gap-16 md:gap-2.5 lg:gap-8 h-[600px] md:h-fit">
       <CategoryLink
         text="headphones"
         img={headphoneThumbnailImg}
