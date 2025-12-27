@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
+import Modal from "./Modal";
+import CategoriesThumbnail from "../CategoriesThumbnail";
 
 export default function MenuIcon() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleNav() {
+    setIsOpen((prev) => !prev);
+  }
   return (
-    <button className="md:mr-8 lg:hidden">
-      <img src={hamburger} alt="Menu icon" />
-    </button>
+    <>
+      <button className="md:mr-8 lg:hidden" onClick={toggleNav}>
+        <img src={hamburger} alt="Menu icon" />
+      </button>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <div
+          className="bg-white rounded-b-lg max-h-8/10 p-6 w-full flex flex-col gap-8"
+          onClick={(e) => e.stopPropagation()} // prevent close on content click
+        >
+          <CategoriesThumbnail />
+        </div>
+      </Modal>
+    </>
   );
 }
