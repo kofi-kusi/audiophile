@@ -16,7 +16,7 @@ export default function MenuIcon() {
       </button>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <div
-          className="bg-white rounded-b-lg max-h-8/10 p-6 w-full flex flex-col gap-8"
+          className="bg-white rounded-b-lg h-8/10 px-6 pb-8 w-full flex flex-col gap-8"
           onClick={(e) => e.stopPropagation()} // prevent close on content click
         >
           <CategoriesThumbnail />

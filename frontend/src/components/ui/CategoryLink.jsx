@@ -6,7 +6,7 @@ export default function CategoryLink({ text, img, url }) {
   return (
     <Link
       to={url}
-      className="relative w-full flex flex-col items-center h-[140px] lg:h-[204px] rounded-[8px] mb-16 md:mb-0 p-6 bg-[#F1F1F1] group"
+      className="relative w-full flex flex-col items-center h-[168px] lg:h-[204px] rounded-[8px] mb-16 md:mb-0 p-6 bg-[#F1F1F1] group"
     >
       <div className="absolute top-0 h-[150px] w-[150px] -translate-y-[35%]">
         <img src={img} alt="category image" className="object-scale-down" />
