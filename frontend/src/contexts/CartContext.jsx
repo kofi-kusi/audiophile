@@ -25,6 +25,10 @@ function cartReducer(cart, action) {
                     : product
                 )
         }
+        
+        case "CLEAR": {
+            return []
+        }
     }
 }
 
@@ -54,8 +58,14 @@ export function CartProvider({ children }) {
             }
         })
     }
+
+    function clearCart(){
+        dispatch({
+            type: "CLEAR"
+        })
+    }
     return (
-        <CartContext.Provider value={{ cart, addToCart, updateQty, dispatch }}>
+        <CartContext.Provider value={{ cart, addToCart, updateQty, clearCart, dispatch }}>
             {children}
         </CartContext.Provider>
     )

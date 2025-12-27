@@ -1,7 +1,7 @@
 import { useCart } from "../hooks/useCart";
 
 export default function CartModal() {
-  const { cart, updateQty } = useCart();
+  const { cart, updateQty, clearCart } = useCart();
   const totalPrice = cart.reduce((sum, item) => sum + (item.quantity * item.price), 0)
 
   if (totalPrice === 0 ) {
@@ -25,7 +25,9 @@ export default function CartModal() {
         <h4 className="font-bold text-[18px] leading-[1.3px] uppercase">
           cart ({cart.length})
         </h4>
-        <button className="font-[400px] opacity-50 leading-[25px] cursor-pointer hover:text-[#D87D4A]">
+        <button className="font-[400px] opacity-50 leading-[25px] cursor-pointer hover:text-[#D87D4A]"
+        onClick={() => clearCart()}
+        >
           Remove all
         </button>
       </div>
