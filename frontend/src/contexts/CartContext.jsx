@@ -17,6 +17,14 @@ function cartReducer(cart, action) {
 
             return [...cart, action.payload]
         }
+
+        case "UPDATE_QTY": {
+            return cart.map((product) => 
+                    product.id === action.payload.id
+                    ? { ...product, quantity: action.payload.quantity}
+                    : product
+                )
+        }
     }
 }
 
@@ -36,8 +44,18 @@ export function CartProvider({ children }) {
         }
         )
     }
+
+    function updateQty(id, quantity){
+        dispatch({
+            type: "UPDATE_QTY",
+            payload: {
+                id: id,
+                quantity
+            }
+        })
+    }
     return (
-        <CartContext.Provider value={{ cart, addToCart, dispatch }}>
+        <CartContext.Provider value={{ cart, addToCart, updateQty, dispatch }}>
             {children}
         </CartContext.Provider>
     )
