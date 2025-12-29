@@ -14,10 +14,10 @@ export default function CheckoutPage() {
   return (
     <main className="max-w-[1150px] mx-auto px-6 mt-4 md:mt-8 lg:mt-20">
       <GoBack />
-      <div className="mt-6 mb-24 flex flex-col justify-between gap-8">
+      <div className="mt-6 mb-24 flex flex-col justify-between gap-8 lg:flex-row">
         <form
           action=""
-          className="bg-[#FFFFFF] rounded-lg p-6 flex flex-col justify-between gap-8"
+          className="bg-[#FFFFFF] rounded-lg p-6 flex flex-col justify-between gap-8 lg:w-7/10"
         >
           <h4 className="text-[28px] uppercase leading-[38px] tracking-[2px] font-bold md:text-[32px] leading-[36px] tracking-px">
             Checkout
@@ -207,7 +207,7 @@ export default function CheckoutPage() {
           </fieldset>
         </form>
 
-        <aside className="bg-[#FFFFFF] py-8 px-6 flex flex-col justify-between gap-8 rounded-lg">
+        <aside className="bg-[#FFFFFF] py-8 px-6 flex flex-col justify-between gap-8 rounded-lg lg:h-[612px]">
           <h6 className="text-[18px] uppercase leading-[24px] tracking-[1.3px] font-bold">
             summary
           </h6>
@@ -221,8 +221,8 @@ export default function CheckoutPage() {
                       alt=""
                       className="size-16 rounded-lg"
                     />
-                    <div className="flex flex-col ">
-                      <p className="font-bold leading-[25px] tracking-0">
+                    <div className="flex flex-col justify-center">
+                      <p className="font-bold leading-[20px] tracking-0">
                         {cartItem.name}
                       </p>
                       <p className="font-bold text-[14px] opacity-50 leading-[25px] tracking-0">
