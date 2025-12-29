@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import GoBack from "../components/ui/GoBack";
 import { useCart } from "../hooks/useCart";
+import ScrollToTop from "../components/ScrollToTop";
+import Modal from "../components/ui/Modal";
+import CheckoutModal from "../components/CheckoutModal";
 
 export default function CheckoutPage() {
   const { cart } = useCart();
@@ -11,8 +14,16 @@ export default function CheckoutPage() {
   const shippingFee = 50;
   const vat = 1079;
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleModal() {
+    setIsOpen((prev) => !prev);
+  }
+
   return (
+    <>
     <main className="max-w-[1150px] mx-auto px-6 mt-4 md:mt-8 lg:mt-20">
+      <ScrollToTop />
       <GoBack />
       <div className="mt-6 mb-24 flex flex-col justify-between gap-8 lg:flex-row">
         <form
@@ -207,7 +218,7 @@ export default function CheckoutPage() {
           </fieldset>
         </form>
 
-        <aside className="bg-[#FFFFFF] py-8 px-6 flex flex-col justify-between gap-8 rounded-lg lg:h-[612px]">
+        <aside className="bg-[#FFFFFF] py-8 px-6 flex flex-col justify-between gap-8 rounded-lg lg:h-fit lg:w-3/10">
           <h6 className="text-[18px] uppercase leading-[24px] tracking-[1.3px] font-bold">
             summary
           </h6>
@@ -271,9 +282,17 @@ export default function CheckoutPage() {
               $ {vat + shippingFee + totalPrice}
             </p>
           </div>
-          <button className="bg-[#D87D4A] text-[#FFFFFF] text-[13px] font-bold leading-px uppercase h-12 py-[15px] px-auto ">Continue & pay</button>
+          <button className="bg-[#D87D4A] text-[#FFFFFF] text-[13px] font-bold leading-px uppercase h-12 py-[15px] px-auto" onClick={toggleModal}>
+            Continue & pay
+          </button>
         </aside>
       </div>
     </main>
+    <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <div className="mx-auto p-6 flex justify-center items-center h-full">
+          <CheckoutModal />
+        </div>
+    </Modal>
+    </>
   );
 }
