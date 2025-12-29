@@ -78,8 +78,8 @@ export default function CheckoutPage() {
               shipping info
             </legend>
 
-            <div className="flex flex-col justify-between gap-6 mt-4">
-              <div className="flex flex-col justify-between gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 justify-between gap-6 mt-4">
+              <div className="flex flex-col md:col-span-2 justify-between gap-2">
                 <label htmlFor="address" className="text-[12px] font-bold">
                   Your Address
                 </label>
@@ -142,8 +142,8 @@ export default function CheckoutPage() {
               payment details
             </legend>
 
-            <div className="flex flex-col justify-between gap-6 mt-4">
-              <div className="flex flex-col justify-between gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 justify-between gap-6 mt-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 md:col-span-2 justify-between gap-2">
                 <label
                   htmlFor="paymentMethod"
                   className="text-[12px] font-bold"
