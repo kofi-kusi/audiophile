@@ -19,3 +19,7 @@
   box-sizing: border-box;
   font-family: manrope;
 }
+
+body {
+  background-color: #FAFAFA;
+}
