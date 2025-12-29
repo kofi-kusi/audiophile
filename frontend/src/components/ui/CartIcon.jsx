@@ -17,7 +17,7 @@ export default function CartIcon() {
       </button>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <div className="mx-auto max-w-[1150px] p-6 flex justify-end">
-          <CartModal />
+          <CartModal setIsOpen={setIsOpen}/>
         </div>
       </Modal>
     </>
