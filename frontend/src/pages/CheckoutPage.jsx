@@ -14,6 +14,8 @@ export default function CheckoutPage() {
   const shippingFee = 50;
   const vat = 1079;
 
+  const grandTotal = shippingFee + vat + totalPrice
+
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleModal() {
@@ -290,7 +292,7 @@ export default function CheckoutPage() {
     </main>
     <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <div className="mx-auto p-6 flex justify-center items-center h-full">
-          <CheckoutModal />
+          <CheckoutModal grandTotal={grandTotal}/>
         </div>
     </Modal>
     </>
