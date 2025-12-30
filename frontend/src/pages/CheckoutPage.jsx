@@ -284,7 +284,7 @@ export default function CheckoutPage() {
               $ {vat + shippingFee + totalPrice}
             </p>
           </div>
-          <button className="bg-[#D87D4A] text-[#FFFFFF] text-[13px] font-bold leading-px uppercase h-12 py-[15px] px-auto" onClick={toggleModal}>
+          <button className="bg-[#D87D4A] text-[#FFFFFF] text-[13px] font-bold leading-px uppercase h-12 py-[15px] px-auto cursor-pointer hover:bg-[#FBAF85]" onClick={toggleModal}>
             Continue & pay
           </button>
         </aside>
