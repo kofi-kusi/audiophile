@@ -1,6 +1,6 @@
 import { createContext, useReducer } from "react";
 
-export const CartContext = createContext()
+const CartContext = createContext()
 
 function cartReducer(cart, action) {
     switch (action.type) {
@@ -70,3 +70,5 @@ export function CartProvider({ children }) {
         </CartContext.Provider>
     )
 }
+
+export { CartContext }
