@@ -58,7 +58,7 @@ export default function CheckoutModal({ grandTotal }) {
       </div>
       <Link
         to="/"
-        className="bg-[#D87D4A] text-white text-[13px] uppercase py-[15px] text-center font-bold"
+        className="bg-[#D87D4A] text-white text-[13px] uppercase py-[15px] text-center font-bold hover:bg-[#FBAF85]"
       >
         back to home
       </Link>

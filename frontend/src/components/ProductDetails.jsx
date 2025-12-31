@@ -4,10 +4,13 @@ import ProductFeatures from "./ui/ProductFeatures";
 import ProductGallery from "./ui/ProductGallery";
 import OtherProducts from "./ui/OtherProducts";
 import { useCart } from "../hooks/useCart";
+import { ToastContainer, toast } from "react-toastify"
 
 export default function ProductDetails({ product }) {
   const { addToCart } = useCart()
   const [quantity, setQuantity] = useState(1);
+
+  const notify = (name) => toast(`${name} added to cart!`)
 
   function decreaseQuantity() {
     if (quantity <= 1) return;
@@ -45,23 +48,28 @@ export default function ProductDetails({ product }) {
             $ {product.price}
           </h6>
           <div className="flex gap-4">
-            <div className="flex justify-between p-[15px] w-30 bg-[#F1F1F1] text-[13px]">
+            <div className="flex justify-between items-center p-[15px] w-30 bg-[#F1F1F1] text-lg">
               <button
                 onClick={decreaseQuantity}
-                className="opacity-25 cursor-pointer"
+                className="opacity-25 cursor-pointer hover:text-[#D87D4A]"
               >
                 -
               </button>
-              <span>{quantity}</span>
+              <span className="text-[13px]">{quantity}</span>
               <button
                 onClick={increaseQuantity}
-                className="opacity-25 cursor-pointer"
+                className="opacity-25 cursor-pointer hover:text-[#D87D4A]"
               >
                 +
               </button>
             </div>
             <button
-              onClick={() => addToCart(product, quantity)}
+              onClick={
+                () => {
+                  addToCart(product, quantity)
+                notify(product.name)
+                }
+              }
               className="bg-[#D87D4A] py-[15px] font-bold uppercase text-[#FFFFFF] text-[13px] tracking-[1px] w-[160px] hover:bg-[#FBAF85] transition-colors cursor-pointer"
             >
               Add to Cart
@@ -75,6 +83,18 @@ export default function ProductDetails({ product }) {
       />
       <ProductGallery gallery={product.gallery}/>
       <OtherProducts others={product.others}/>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={true}
+        newestOnTop={true}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 }
