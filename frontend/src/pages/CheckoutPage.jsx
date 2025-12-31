@@ -12,7 +12,7 @@ export default function CheckoutPage() {
     0,
   );
   const shippingFee = 50;
-  const vat = 1079;
+  const vat = Math.round(0.2 * totalPrice);
 
   const grandTotal = shippingFee + vat + totalPrice
 
