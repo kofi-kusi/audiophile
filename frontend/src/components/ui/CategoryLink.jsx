@@ -15,7 +15,7 @@ export default function CategoryLink({ text, img, url }) {
         <h6 className="text-[18px] font-bold leading-[19px] tracking-[1.3px] uppercase">
           {text}
         </h6>
-        <button className="text-[13px] leading-[25px] tracking-px flex gap-2 font-bold uppercase opacity-50 group-hover:text-[#D87D4A]">
+        <button className="text-[13px] leading-[25px] tracking-px flex items-center justify-center gap-2 font-bold uppercase opacity-50 group-hover:text-[#D87D4A]">
           Shop
           <img src={iconArrowRight} alt="" className="object-scale-down" />
         </button>
