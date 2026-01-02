@@ -9,12 +9,12 @@ export default function YX1Earphones() {
     <div className="flex flex-col gap-6 md:flex-row">
       <picture className="md:w-1/2">
         <source
-          srcset={desktopEarphonesYX1Img}
+          srcSet={desktopEarphonesYX1Img}
           media="(min-width: 1000px)"
           className=""
         />
         <source
-          srcset={tabletEarphonesYX1Img}
+          srcSet={tabletEarphonesYX1Img}
           media="(min-width: 690px)"
           className=""
         />

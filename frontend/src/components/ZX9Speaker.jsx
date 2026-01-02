@@ -16,12 +16,12 @@ export default function ZX9Speaker() {
       />
       <picture className="w-[208px] md:w-[250px] lg:w-[500px] z-1 lg:translate-y-18">
         <source
-          srcset={desktopSpeakerZX9Img}
+          srcSet={desktopSpeakerZX9Img}
           media="(min-width: 1000px)"
           className=""
         />
         <source
-          srcset={tabletSpeakerZX9Img}
+          srcSet={tabletSpeakerZX9Img}
           media="(min-width: 690px)"
           className=""
         />

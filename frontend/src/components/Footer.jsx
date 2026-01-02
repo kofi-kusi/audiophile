@@ -37,6 +37,7 @@ export default function Footer() {
               <NavLink
                 to={navItem.url}
                 className="font-bold uppercase text-[13px] leading-[25px] tracking-[2px] hover:text-[#D87D4A] transition-colors"
+                key={navItem.name}
               >
                 {navItem.name}
               </NavLink>

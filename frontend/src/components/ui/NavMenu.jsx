@@ -33,7 +33,7 @@ export default function NavMenu() {
     <nav className="sm:hidden md:hidden lg:flex lg:gap-[34px]">
       {navLinks.map((navItem) => {
         return (
-          <NavLink to={navItem.url} className={getNavClasses}>
+          <NavLink to={navItem.url} className={getNavClasses} key={navItem.name}>
             {navItem.name}
           </NavLink>
         );

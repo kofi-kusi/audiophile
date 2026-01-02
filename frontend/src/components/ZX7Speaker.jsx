@@ -9,12 +9,12 @@ export default function ZX7Speaker() {
     <div className="relative rounded-[8px] overflow-hidden">
       <picture className="w-full bg-cover">
         <source
-          srcset={desktopSpeakerZX7Img}
+          srcSet={desktopSpeakerZX7Img}
           media="(min-width: 1000px)"
           className=""
         />
         <source
-          srcset={tabletSpeakerZX7Img}
+          srcSet={tabletSpeakerZX7Img}
           media="(min-width: 690px)"
           className=""
         />
