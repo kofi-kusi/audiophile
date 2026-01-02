@@ -5,6 +5,7 @@ import { ProductsContext } from "../contexts/ProductsContext";
 import { useParams } from "react-router";
 import ProductsList from "../components/ProductsList";
 import ScrollToTop from "../components/ScrollToTop";
+import { Helmet } from "react-helmet-async";
 
 export default function CategoryPage() {
   const products = useContext(ProductsContext);
@@ -16,9 +17,9 @@ export default function CategoryPage() {
 
   return (
     <>
-      <head>
-        <title>{"Audiophile shop - " + category}</title>
-      </head>
+      <Helmet>
+        <title>Audiophile shop - {category}</title>
+      </Helmet>
       <main>
         <ScrollToTop />
         <h1 className="text-[28px] font-bold tracking-[2px] text-center bg-[#191919] text-white uppercase py-8 md:text-[40px] tracking-[1.5px] md:leading-[44px] md:pt-[105px] md:pb-[97px]">

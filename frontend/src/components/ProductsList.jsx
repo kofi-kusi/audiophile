@@ -8,7 +8,7 @@ export default function ProductsList({ products }) {
   return (
     <div className="my-16 md:my-30 lg:my-40 flex flex-col gap-30">
       {orderedProducts.map((product, index) => (
-        <CategoryPageItem product={product} index={index} />
+        <CategoryPageItem product={product} index={index} key={product.name} />
       ))}
     </div>
   );

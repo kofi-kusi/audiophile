@@ -67,7 +67,8 @@ export default function ProductDetails({ product }) {
               onClick={
                 () => {
                   addToCart(product, quantity)
-                notify(product.name)
+                  notify(product.name)
+                  setQuantity(1)
                 }
               }
               className="bg-[#D87D4A] py-[15px] font-bold uppercase text-[#FFFFFF] text-[13px] tracking-[1px] w-[160px] hover:bg-[#FBAF85] transition-colors cursor-pointer"

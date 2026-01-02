@@ -21,7 +21,7 @@ export default function ProductFeatures({ features, includes }) {
         <ul className="flex flex-col gap-2">
           {includes.map((include) => {
             return (
-              <li className="flex gap-6">
+              <li className="flex gap-6" key={include.item}>
                 <span className="text-[#D87D4A] font-bold tracking-normal">
                   {include.quantity}x
                 </span>

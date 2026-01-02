@@ -12,7 +12,10 @@ export default function OtherProducts({ others }) {
       <div className="flex flex-col justify-between gap-18 md:flex-row md:gap-3 lg:gap-8">
         {others.map((product) => {
           return (
-            <div className="flex flex-col items-center gap-8 text-center">
+            <div
+              className="flex flex-col items-center gap-8 text-center"
+              key={product.name}
+            >
               <picture>
                 <source
                   srcSet={product.image.desktop}
