@@ -1,4 +1,4 @@
-# Frontend Mentor - Audiphile e-commerce website 
+# Frontend Mentor - Audiophile e-commerce website 
 
 This is a solution to [Frontend Mentor's Audiophile guru challenge](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx)
 
@@ -18,8 +18,8 @@ Your users should be able to:
 
 - [x] Add/Remove products from the cart
 - [x] Edit product quantities in the cart
-- [ ] Fill in all fields in the checkout
-- [ ] Receive form validations if fields are missed or incorrect during checkout
+- [x] Fill in all fields in the checkout
+- [x] Receive form validations if fields are missed or incorrect during checkout
 - [x] See correct checkout totals depending on the products in the cart
 - [x] Shipping always adds $50 to the order
 - [x] VAT is calculated as 20% of the product total, excluding shipping
