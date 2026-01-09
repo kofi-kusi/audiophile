@@ -44,7 +44,7 @@ export default function CartModal({ setIsOpen }) {
         {
         cart.map((item) => {
           return (
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center" key={item.name}>
               <div className="flex justify-center items-center gap-4">
                 <img
                   src={item.image}
