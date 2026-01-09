@@ -7,7 +7,6 @@ import { useParams } from "react-router";
 import CategoriesThumbnail from "../components/CategoriesThumbnail";
 import BestGear from "../components/BestGear";
 import ScrollToTop from "../components/ScrollToTop";
-import { Helmet } from "react-helmet-async";
 
 export default function ProductPage() {
   const products = useContext(ProductsContext);
@@ -17,9 +16,6 @@ export default function ProductPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Audiophile shop - {product.name}</title>
-      </Helmet>
       <ScrollToTop />
       <main className="max-w-[1150px] mx-auto px-6 mt-4 md:mt-8 lg:mt-20">
         <GoBack />

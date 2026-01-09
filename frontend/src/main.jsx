@@ -6,15 +6,12 @@ import App from "./App.jsx";
 import router from "./routes";
 import { ProductsProvider } from "./contexts/ProductsContext.jsx";
 import { CartProvider } from "./contexts/CartContext.jsx";
-import { HelmetProvider } from "react-helmet-async";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <CartProvider>
       <ProductsProvider>
-        <HelmetProvider>
-          <RouterProvider router={router} />
-        </HelmetProvider>
+        <RouterProvider router={router} />
       </ProductsProvider>
     </CartProvider>
   </StrictMode>,
