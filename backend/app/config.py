@@ -1,0 +1,28 @@
+from pathlib import Path
+
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+PROJECT_DIR = Path(__file__).resolve().parent.parent
+
+_base_config = SettingsConfigDict(
+    env_file=PROJECT_DIR / ".env",
+    env_ignore_empty=True,
+    extra="ignore",
+)
+
+
+class DatabaseSettings(BaseSettings):
+    POSTGRES_SERVER: str
+    POSTGRES_DB: str
+    POSTGRES_PORT: int
+    POSTGRES_PASSWORD: str
+    POSTGRES_USER: str
+
+    model_config = _base_config
+
+    @property
+    def POSTGRES_URL(self):
+        return f"postgresql+psycopg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@{self.POSTGRES_SERVER}:{self.POSTGRES_PORT}/{self.POSTGRES_DB}"
+
+
+db_settings = DatabaseSettings()
