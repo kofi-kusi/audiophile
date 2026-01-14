@@ -1,15 +1,16 @@
 from fastapi import APIRouter
 
 from ..schemas.tag import APITag
-from ..schemas.user import UserPublic
+from ..schemas.user import UserPublic, UserCreate
+from ..deps import UserServiceDep
 
 router = APIRouter(prefix="/user", tags=[APITag.USER])
 
 
 ### Register a new user
 @router.post("/signup", response_model=UserPublic)
-def register_user():
-    pass
+def register_user(user: UserCreate, sevice: UserServiceDep):
+    return sevice.add(user)
 
 
 ### Verify user email
