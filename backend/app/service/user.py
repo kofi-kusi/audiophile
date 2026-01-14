@@ -1,6 +1,8 @@
 from sqlmodel import Session
+
 from app.api.schemas.user import UserCreate
 from app.database.models import User
+
 
 class UserService:
     def __init__(self, session: Session):
