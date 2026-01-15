@@ -25,4 +25,12 @@ class DatabaseSettings(BaseSettings):
         return f"postgresql+psycopg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@{self.POSTGRES_SERVER}:{self.POSTGRES_PORT}/{self.POSTGRES_DB}"
 
 
+class SecuritySettings(BaseSettings):
+    JWT_ALGORITHM: str
+    JWT_SECRET: str
+
+    model_config = _base_config
+
+
 db_settings = DatabaseSettings()
+security_settings = SecuritySettings()

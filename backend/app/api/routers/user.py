@@ -1,8 +1,12 @@
-from fastapi import APIRouter
+from typing import Annotated
 
+from fastapi import APIRouter, Depends
+from fastapi.security import OAuth2PasswordRequestForm
+
+from ..deps import UserServiceDep, UserDep
 from ..schemas.tag import APITag
-from ..schemas.user import UserPublic, UserCreate
-from ..deps import UserServiceDep
+from ..schemas.user import UserCreate, UserPublic
+from app.core.security import Token
 
 router = APIRouter(prefix="/user", tags=[APITag.USER])
 
@@ -13,6 +17,15 @@ def register_user(user: UserCreate, sevice: UserServiceDep):
     return sevice.add(user)
 
 
+### Get access token
+@router.post("/token")
+async def login(
+    form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
+    service: UserServiceDep,
+) :
+    return service.token(email=form_data.username, password=form_data.password)
+
+
 ### Verify user email
 @router.get("/verify")
 def verify_user_email():
@@ -21,8 +34,8 @@ def verify_user_email():
 
 ### Get user info
 @router.get("/me")
-def read_user():
-    pass
+def read_user(user: UserDep):
+    return user
 
 
 ### Email password reset link

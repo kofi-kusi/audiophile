@@ -5,14 +5,13 @@ from .api.routers import user
 
 app = FastAPI(
     title="Audiophile Shop",
-    docs_url=None,
     redoc_url=None,
 )
 
 app.include_router(user.router)
 
 
-@app.get("/docs", include_in_schema=False)
+@app.get("/scalar", include_in_schema=False)
 def get_scalar_docs():
     return get_scalar_api_reference(
         openapi_url=app.openapi_url,

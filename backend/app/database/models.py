@@ -6,4 +6,4 @@ class User(SQLModel, table=True):
     id: UUID = Field(default_factory=uuid4, primary_key=True)
     name: str
     email: EmailStr
-    password: str
+    password_hash: str
