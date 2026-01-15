@@ -4,8 +4,8 @@ from fastapi import HTTPException, status
 from pwdlib import PasswordHash
 from pydantic import EmailStr
 from sqlmodel import Session, select
-from app.api.schemas.user import UserCreate
 
+from app.api.schemas.user import UserCreate
 from app.core.security import Token
 from app.database.models import User
 from app.utils import generate_access_token
@@ -31,8 +31,8 @@ class UserService:
 
         return user
 
-    def _get_user_by_email(self, email: str):
-        return self.session.exec(select(User).where(User.email == email)).one()
+    def _get_user_by_email(self, email: str) -> User | None:
+        return self.session.exec(select(User).where(User.email == email)).first()
 
     def token(self, email: EmailStr, password: str) -> Token:
         db_user = self._get_user_by_email(email)
