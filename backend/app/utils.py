@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta, timezone
 
 import jwt
+from jwt.exceptions import InvalidTokenError
 from pwdlib import PasswordHash
 
 from app.config import security_settings
@@ -30,5 +31,5 @@ def decode_access_token(token: str) -> dict | None:
             key=security_settings.JWT_SECRET,
             algorithms=security_settings.JWT_ALGORITHM,
         )
-    except jwt.PyJWKError:
+    except InvalidTokenError:
         return None
