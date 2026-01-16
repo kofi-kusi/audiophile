@@ -6,6 +6,7 @@ from sqlmodel import Session
 
 from app.core.security import oauth2_scheme
 from app.database.models import User
+from app.database.redis import is_jti_blacklisted
 from app.database.session import get_session
 from app.service.user import UserService
 from app.utils import decode_access_token
@@ -19,9 +20,11 @@ def get_user_service(session: SessionDep):
 
 def _get_access_token_data(token: str) -> dict:
     payload: dict | None = decode_access_token(token=token)
-    if payload is None:
+
+    if payload is None or is_jti_blacklisted(payload["jti"]):
         raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token"
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid token",
         )
     return payload
 
@@ -37,7 +40,8 @@ def get_current_user(
     user = session.get(User, UUID(token_data["user"]["id"]))
     if user is None:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found",
         )
     return user
 
