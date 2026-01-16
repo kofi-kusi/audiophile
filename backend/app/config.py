@@ -18,6 +18,9 @@ class DatabaseSettings(BaseSettings):
     POSTGRES_PASSWORD: str
     POSTGRES_USER: str
 
+    REDIS_HOST: str
+    REDIS_PORT: int
+
     model_config = _base_config
 
     @property
