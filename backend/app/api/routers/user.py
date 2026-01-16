@@ -1,12 +1,15 @@
+from datetime import datetime, timezone
 from typing import Annotated
 
 from fastapi import APIRouter, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 
-from ..deps import UserServiceDep, UserDep
+from app.core.security import Token
+from app.database.redis import add_jti_to_blacklist
+
+from ..deps import UserDep, UserServiceDep, get_user_access_token
 from ..schemas.tag import APITag
 from ..schemas.user import UserCreate, UserPublic
-from app.core.security import Token
 
 router = APIRouter(prefix="/user", tags=[APITag.USER])
 
@@ -22,7 +25,7 @@ def register_user(user: UserCreate, sevice: UserServiceDep):
 async def login(
     form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
     service: UserServiceDep,
-) :
+) -> Token:
     return service.token(email=form_data.username, password=form_data.password)
 
 
@@ -52,5 +55,11 @@ def get_reset_password_form():
 
 ### Logout user
 @router.get("/logout")
-def logout_user():
-    pass
+def logout_user(
+    token_data: Annotated[dict, Depends(get_user_access_token)],
+):
+    jti: str = token_data["jti"]
+    time_remaining = int(token_data["exp"] - datetime.now(timezone.utc).timestamp())
+
+    add_jti_to_blacklist(jti=jti, time_remaining=time_remaining)
+    return {"detail": "Successfully logged out"}
