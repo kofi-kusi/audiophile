@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, timezone
+from uuid import uuid4
 
 import jwt
 from jwt.exceptions import InvalidTokenError
@@ -15,7 +16,7 @@ def generate_access_token(data: dict, expires_delta: timedelta | None = None) ->
         expire = datetime.now(tz=timezone.utc) + expires_delta
     else:
         expire = datetime.now(tz=timezone.utc) + timedelta(hours=3)
-    to_encode.update({"exp": expire})
+    to_encode.update({"exp": expire, "jti": str(uuid4())})
     token: str = jwt.encode(
         payload=to_encode,
         key=security_settings.JWT_SECRET,
