@@ -1,7 +1,7 @@
 from typing import Annotated
 from uuid import UUID
 
-from fastapi import Depends, HTTPException, status
+from fastapi import BackgroundTasks, Depends, HTTPException, status
 from sqlmodel import Session
 
 from app.core.security import oauth2_scheme
@@ -14,8 +14,8 @@ from app.utils import decode_access_token
 SessionDep = Annotated[Session, Depends(get_session)]
 
 
-def get_user_service(session: SessionDep):
-    return UserService(session)
+def get_user_service(session: SessionDep, tasks: BackgroundTasks):
+    return UserService(session, tasks)
 
 
 def _get_access_token_data(token: str) -> dict:
