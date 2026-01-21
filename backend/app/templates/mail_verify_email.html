@@ -1,11 +1,30 @@
-<!doctype html>
 <html lang="en">
-    <style>
-        body {
-            background-color: #fff2;
-        }
-    </style>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+    body {
+      background-color: #fff2;
+      font-family: "Manrope";
+    }
+
+    a {
+      text-decoration: none;
+      width: fit-content;
+      height: fit-content;
+      padding: 10px 15px;
+      background-color: #d87d4a;
+      color: white;
+      font-weight: bold;
+      font-size: larger;
+      border-radius: 8px;
+    }
+  </style>
   <body>
-    <h2>Hello {{ name }}! Welcome to my mail test</h2>
+    <h2>Hello {{ name }}!</h2>
+    <p>
+      Thanks for signing up!. To complete your registration, kindly verify your
+      email by clicking on the button bellow.
+    </p>
+    <a href="{{ verification_url }}">Verify</a>
   </body>
 </html>
