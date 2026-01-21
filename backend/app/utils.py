@@ -2,12 +2,14 @@ from datetime import datetime, timedelta, timezone
 from uuid import uuid4
 
 import jwt
+from itsdangerous import BadSignature, SignatureExpired, URLSafeTimedSerializer
 from jwt.exceptions import InvalidTokenError
 from pwdlib import PasswordHash
 
 from app.config import security_settings
 
 password_hash = PasswordHash.recommended()
+_serializer = URLSafeTimedSerializer(secret_key=security_settings.JWT_SECRET)
 
 
 def generate_access_token(data: dict, expires_delta: timedelta | None = None) -> str:
@@ -33,4 +35,18 @@ def decode_access_token(token: str) -> dict | None:
             algorithms=security_settings.JWT_ALGORITHM,
         )
     except InvalidTokenError:
+        return None
+
+
+def generate_url_safe_token(data: dict):
+    return _serializer.dumps(data)
+
+
+def decode_url_safe_token(
+    token: str,
+    exp: timedelta | None = None,
+) -> dict | None:
+    try:
+        return _serializer.loads(s=token)
+    except (BadSignature, SignatureExpired):
         return None
