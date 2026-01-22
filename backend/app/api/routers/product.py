@@ -14,7 +14,7 @@ def add_product(product: ProductCreate, service: ProductServiceDep):
     return service.add_product(product)
 
 
-@router.get("/{category}")
+@router.get("/{category}", response_model=list[ProductPublic])
 def get_category_products(category: CategoryEnum, service: ProductServiceDep):
     return service.get_caterory_products(category)
 

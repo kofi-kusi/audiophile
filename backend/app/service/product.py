@@ -1,4 +1,4 @@
-from sqlmodel import Session
+from sqlmodel import Session, select
 
 from app.api.schemas.product import ProductCreate
 from app.database.models import CategoryEnum, Product
@@ -18,8 +18,5 @@ class ProductService:
         return db_product
 
     def get_caterory_products(self, category: CategoryEnum):
-        return {
-            "name": "xy earphones",
-            "price": 333,
-            "cat": category
-        }
+        products = self.session.exec(select(Product).where(Product.category == category)).all()
+        return products
