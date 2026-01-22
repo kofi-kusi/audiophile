@@ -1,14 +1,14 @@
 from fastapi import FastAPI
 from scalar_fastapi import get_scalar_api_reference
 
-from .api.routers import user
+from .api.routers.main import master_router
 
 app = FastAPI(
     title="Audiophile Shop",
     redoc_url=None,
 )
 
-app.include_router(user.router)
+app.include_router(master_router)
 
 
 @app.get("/scalar", include_in_schema=False)
