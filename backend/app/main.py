@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from scalar_fastapi import get_scalar_api_reference
 
-from .api.routers.main import master_router
+from .api.main import master_router
 
 app = FastAPI(
     title="Audiophile Shop",
