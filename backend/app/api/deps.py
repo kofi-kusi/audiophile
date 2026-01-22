@@ -8,6 +8,7 @@ from app.core.security import oauth2_scheme
 from app.database.models import User
 from app.database.redis import is_jti_blacklisted
 from app.database.session import get_session
+from app.service.product import ProductService
 from app.service.user import UserService
 from app.utils import decode_access_token
 
@@ -46,9 +47,18 @@ def get_current_user(
     return user
 
 
+def get_product_sercive(session: SessionDep):
+    return ProductService(session)
+
+
 UserServiceDep = Annotated[
     UserService,
     Depends(get_user_service),
 ]
 
 UserDep = Annotated[User, Depends(get_current_user)]
+
+ProductServiceDep = Annotated[
+    ProductService,
+    Depends(get_product_sercive),
+]
