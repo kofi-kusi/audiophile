@@ -1,9 +1,10 @@
 from datetime import datetime, timezone
 from enum import Enum
-from typing import Any
 from uuid import UUID, uuid4
 
 from pydantic import EmailStr
+from sqlalchemy import Column
+from sqlalchemy.dialects.postgresql import JSON
 from sqlmodel import Field, SQLModel
 
 
@@ -11,6 +12,29 @@ class CategoryEnum(str, Enum):
     headphones = "headphones"
     speakers = "speakers"
     earphones = "earphones"
+
+
+class ImageSet(SQLModel):
+    mobile: str
+    tablet: str
+    desktop: str
+
+
+class IncludedItem(SQLModel):
+    quantity: int
+    item: str
+
+
+class RelatedProduct(SQLModel):
+    slug: str
+    name: str
+    image: ImageSet
+
+
+class Gallery(SQLModel):
+    first: ImageSet
+    second: ImageSet
+    third: ImageSet
 
 
 class User(SQLModel, table=True):
@@ -28,20 +52,21 @@ class User(SQLModel, table=True):
 
 
 class Product(SQLModel, table=True):
-    id: UUID = Field(
-        default_factory=uuid4,
-        primary_key=True,
-    )
+    id: UUID = Field(default_factory=uuid4, primary_key=True)
 
-    slug: str
+    slug: str = Field(index=True, unique=True)
     name: str
-    image_urls: dict[str, str]
+
+    image: ImageSet = Field(sa_column=Column(JSON))
     category: CategoryEnum
-    categoryImage_urls: dict[str, str]
-    new: bool
+    category_image: ImageSet = Field(sa_column=Column(JSON))
+
+    is_new: bool = Field(alias="new")
     price: int
+
     description: str
     features: str
-    includes: list[dict[str, Any]]
-    gallery: dict[str, dict[str, str]]
-    others: list[dict[str, Any]]
+
+    includes: list[IncludedItem] = Field(sa_column=Column(JSON))
+    gallery: Gallery = Field(sa_column=Column(JSON))
+    others: list[RelatedProduct] = Field(sa_column=Column(JSON))
