@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 import CategoriesThumbnail from "../components/CategoriesThumbnail";
 import BestGear from "../components/BestGear";
 import { ProductsContext } from "../contexts/ProductsContext";
@@ -7,13 +7,18 @@ import ProductsList from "../components/ProductsList";
 import ScrollToTop from "../components/ScrollToTop";
 
 export default function CategoryPage() {
-  const products = useContext(ProductsContext);
+  const [products, setProducts] = useState([]);
   const { category } = useParams();
 
-  const categoryProducts = products.filter(
-    (product) => product.category === category,
-  );
-  
+  useEffect(() => {
+    fetch(`http://127.0.0.1:8000/${category}`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch data");
+        return res.json();
+      })
+      .then((data) => setProducts(data))
+      .catch((err) => console.log(err));
+  }, [category]);
 
   return (
     <>
@@ -23,7 +28,7 @@ export default function CategoryPage() {
           {category}
         </h1>
         <div className="max-w-[1150px] mx-auto px-6">
-          <ProductsList products={categoryProducts} />
+          <ProductsList products={products} />
           <CategoriesThumbnail />
           <BestGear />
         </div>
