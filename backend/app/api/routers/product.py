@@ -3,8 +3,8 @@ from fastapi import APIRouter
 from app.database.models import CategoryEnum
 
 from ..deps import ProductServiceDep
-from ..schemas.tag import APITag
 from ..schemas.product import ProductCreate, ProductPublic
+from ..schemas.tag import APITag
 
 router = APIRouter(prefix="", tags=[APITag.PRODUCT])
 
@@ -22,4 +22,3 @@ def get_category_products(category: CategoryEnum, service: ProductServiceDep):
 @router.get("/{category}/{slug}")
 def get_product(category: CategoryEnum, slug: str, service: ProductServiceDep):
     return service.get_product(category, slug)
-

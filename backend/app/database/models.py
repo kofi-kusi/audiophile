@@ -59,9 +59,9 @@ class Product(SQLModel, table=True):
 
     image: ImageSet = Field(sa_column=Column(JSON))
     category: CategoryEnum
-    category_image: ImageSet = Field(sa_column=Column(JSON))
+    categoryImage: ImageSet = Field(sa_column=Column(JSON))
 
-    is_new: bool = Field(alias="new")
+    new: bool
     price: int
 
     description: str

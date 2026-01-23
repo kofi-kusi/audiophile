@@ -17,9 +17,9 @@ class BaseProduct(BaseModel):
 
     image: ImageSet
     category: CategoryEnum
-    category_image: ImageSet
+    categoryImage: ImageSet
 
-    is_new: bool
+    new: bool
     price: int
 
     description: str

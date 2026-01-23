@@ -33,9 +33,7 @@ async def login(
 @router.get("/verify")
 def verify_user_email(token: str, service: UserServiceDep):
     service.verify_email(token)
-    return {
-        "detail": "Email verified"
-    }
+    return {"detail": "Email verified"}
 
 
 ### Get user info
