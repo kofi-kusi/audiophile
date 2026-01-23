@@ -1,3 +1,4 @@
+from fastapi import HTTPException, status
 from sqlmodel import Session, select
 
 from app.api.schemas.product import ProductCreate
@@ -18,5 +19,20 @@ class ProductService:
         return db_product
 
     def get_caterory_products(self, category: CategoryEnum):
-        products = self.session.exec(select(Product).where(Product.category == category)).all()
+        products = self.session.exec(
+            select(Product).where(Product.category == category)
+        ).all()
         return products
+
+    def get_product(self, category: CategoryEnum, slug: str) -> Product:
+        product = self.session.exec(
+            select(Product).where(Product.category == category, Product.slug == slug)
+        ).one()
+
+        if not product:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"No product with slug: {slug}",
+            )
+
+        return product

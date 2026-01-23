@@ -18,3 +18,8 @@ def add_product(product: ProductCreate, service: ProductServiceDep):
 def get_category_products(category: CategoryEnum, service: ProductServiceDep):
     return service.get_caterory_products(category)
 
+
+@router.get("/{category}/{slug}")
+def get_product(category: CategoryEnum, slug: str, service: ProductServiceDep):
+    return service.get_product(category, slug)
+
