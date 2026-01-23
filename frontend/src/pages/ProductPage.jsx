@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductDetails from "../components/ProductDetails";
 import GoBack from "../components/ui/GoBack";
-import { ProductsContext } from "../contexts/ProductsContext";
-import { useContext } from "react";
 import { useParams } from "react-router";
 import CategoriesThumbnail from "../components/CategoriesThumbnail";
 import BestGear from "../components/BestGear";
 import ScrollToTop from "../components/ScrollToTop";
 
 export default function ProductPage() {
-  const products = useContext(ProductsContext);
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
   const { slug } = useParams();
+  const { category } = useParams();
 
-  const product = products.filter((product) => product.slug === slug)[0];
+  useEffect(() => {
+    fetch(`http://127.0.0.1:8000/${category}/${slug}`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch data");
+        return res.json();
+      })
+      .then((data) => setProduct(data))
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false));
+  }, [category, slug]);
+  console.log(product);
+
+  if (loading === true) {
+    return (
+      <div className="h-screen w-screen flex items-center justify-center">
+        <p className="font-bold">Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <>
