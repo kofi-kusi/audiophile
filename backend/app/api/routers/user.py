@@ -16,8 +16,8 @@ router = APIRouter(prefix="/user", tags=[APITag.USER])
 
 ### Register a new user
 @router.post("/signup", response_model=UserPublic)
-def register_user(user: UserCreate, sevice: UserServiceDep):
-    return sevice.add(user)
+def register_user(user: UserCreate, service: UserServiceDep):
+    return service.add(user)
 
 
 ### Get access token
