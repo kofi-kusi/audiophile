@@ -6,6 +6,7 @@ This is a solution to [Frontend Mentor's Audiophile guru challenge](https://www.
 
 - [Overview](#overview)
   - [The Challenge](#the-challenge)
+  - [Stack](#stack)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [Author](#author)
@@ -27,6 +28,35 @@ Your users should be able to:
 - [x] View the optimal layout for the app depending on their device's screen size
 - [x] See hover states for all interactive elements on the page
 - [ ] Bonus: Keep track of what's in the cart, even after refreshing the browser (localStorage could be used for this if you're not building out a full-stack app)
+
+### stack
+
+#### backend
+
+Followed clean architecture principles.
+
+- fastapi: for implementing a RESTful backend api
+- PostgreSQL: for a relational database
+- pycopg: db driver
+- fastapi-mail: for sending mails using google's smtp server
+- alembic: for database migrations
+- sqlmodel: for database modelling
+- pydantic: for data validations and data models
+- pwdlib: used with argon2 algorithm for password hashing and verification
+- itsdangerous: generating url safe tokens
+- pyjwt: for generating access tokens for a `password flow` authentication and  authorization
+- uv: package manager
+
+### frontend
+
+Component based architecture
+
+- react
+- react router v7 (data mode)
+- tailwindcss
+- react-toastify
+- react-hook-form
+- vite
 
 ### Screenshot
 
