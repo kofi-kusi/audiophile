@@ -83,8 +83,6 @@ Optional tools:
 
 ### Local setup
 
-The frontend currently uses local product data from `frontend/src/data.json`, so you can run the UI without the backend.
-
 #### Frontend (Vite + React)
 
 ```bash
