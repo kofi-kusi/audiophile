@@ -1,4 +1,4 @@
-# Frontend Mentor - Audiophile e-commerce website 
+# Frontend Mentor - Audiophile e-commerce website
 
 This is a solution to [Frontend Mentor's Audiophile guru challenge](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx)
 
@@ -7,6 +7,8 @@ This is a solution to [Frontend Mentor's Audiophile guru challenge](https://www.
 - [Overview](#overview)
   - [The Challenge](#the-challenge)
   - [Stack](#stack)
+  - [Prerequisites](#prerequisites)
+  - [Local setup](#local-setup)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [Author](#author)
@@ -44,10 +46,10 @@ Followed clean architecture principles.
 - pydantic: for data validations and data models
 - pwdlib: used with argon2 algorithm for password hashing and verification
 - itsdangerous: generating url safe tokens
-- pyjwt: for generating access tokens for a `password flow` authentication and  authorization
+- pyjwt: for generating access tokens for a `password flow` authentication and authorization
 - uv: package manager
 
-### frontend
+#### frontend
 
 Component based architecture
 
@@ -57,6 +59,110 @@ Component based architecture
 - react-toastify
 - react-hook-form
 - vite
+
+### Prerequisites
+
+To run this project locally you’ll need:
+
+- **Git**
+
+Frontend:
+
+- **Node.js** (recommended: v20+)
+- **npm** (comes with Node)
+
+Backend (optional for the UI, required if you want the API/auth/email flows):
+
+- **Python** (recommended: 3.11+)
+- **PostgreSQL** (recommended: 15+)
+- **Redis** (recommended: 7+)
+
+Optional tools:
+
+- **uv** (fast Python package manager; the backend also works with plain `pip`)
+
+### Local setup
+
+The frontend currently uses local product data from `frontend/src/data.json`, so you can run the UI without the backend.
+
+#### Frontend (Vite + React)
+
+```bash
+cd frontend
+
+# install dependencies
+npm i
+
+# start dev server
+npm run dev
+```
+
+Open `http://localhost:5173`.
+
+#### Backend (FastAPI)
+
+1. Start Postgres + Redis
+
+```bash
+# Check if Postgres port is listening
+ss -lt | grep postgres
+
+# Redis
+sudo systemctl start redis-server
+```
+
+1. Configure environment variables
+
+Create `backend/.env` with at least the following keys (values depend on your local setup):
+
+```bash
+POSTGRES_SERVER=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=audiophile
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=your-password
+
+REDIS_HOST=localhost
+REDIS_PORT=6379
+
+JWT_SECRET=change_me
+JWT_ALGORITHM=HS256
+
+MAIL_USERNAME=change_me
+MAIL_PASSWORD=change_me
+MAIL_FROM=change_me
+MAIL_PORT=587
+MAIL_SERVER=smtp.gmail.com
+MAIL_FROM_NAME="Audiophile Shop"
+```
+
+Note: mail settings are required at startup because settings are loaded on import; you can use dummy values if you’re not testing email locally.
+
+1. Install backend dependencies + run migrations
+
+```bash
+cd backend
+
+# create & activate a virtualenv
+uv venv
+source .venv/bin/activate
+
+# install dependencies
+uv pip install -r requirements.txt
+
+# run DB migrations
+alembic upgrade head
+```
+
+1. Start the API
+
+```bash
+cd backend
+source .venv/bin/activate
+fastapi dev
+```
+
+API docs: `http://localhost:8000/docs`
 
 ### Screenshot
 
