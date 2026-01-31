@@ -6,8 +6,7 @@ This is a solution to [Frontend Mentor's Audiophile guru challenge](https://www.
 
 > [!NOTE]
 > The complete implementation with a FastAPI backend lives on the `backend` branch. Kindly change to the `backend`
-branch
-
+> branch
 
 ## Table of contents
 
