@@ -1,10 +1,18 @@
-# Frontend Mentor - Audiophile e-commerce website 
+# Frontend Mentor - Audiophile e-commerce website
 
 This is a solution to [Frontend Mentor's Audiophile guru challenge](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx)
+
+## Full-stack version (FastAPI backend)
+
+> [!NOTE]
+> The complete implementation with a FastAPI backend lives on the `backend` branch. Kindly change to the `backend`
+branch
+
 
 ## Table of contents
 
 - [Overview](#overview)
+  - [Full-stack version (FastAPI backend)](#full-stack-version-fastapi-backend)
   - [The Challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
