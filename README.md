@@ -71,7 +71,7 @@ Frontend:
 - **Node.js** (recommended: v20+)
 - **npm** (comes with Node)
 
-Backend (optional for the UI, required if you want the API/auth/email flows):
+Backend (required for UI, API/auth/email flows):
 
 - **Python** (recommended: 3.11+)
 - **PostgreSQL** (recommended: 15+)
