@@ -45,7 +45,7 @@ export default function ProductDetails({ product }) {
             {product.description}
           </p>
           <h6 className="text-lg uppercase leading-6 tracking-[1.3px] font-bold">
-            $ {product.price}
+            &#8373; {product.price}
           </h6>
           <div className="flex gap-4">
             <div className="flex justify-between items-center p-[15px] w-30 bg-[#F1F1F1] text-lg">

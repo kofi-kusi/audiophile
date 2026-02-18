@@ -45,7 +45,7 @@ export default function CheckoutPage() {
                         {cartItem.name}
                       </p>
                       <p className="font-bold text-[14px] opacity-50 leading-[25px] tracking-0">
-                        $ {cartItem.price}
+                        &#8373; {cartItem.price}
                       </p>
                     </div>
                   </div>
@@ -62,7 +62,7 @@ export default function CheckoutPage() {
                 Total
               </p>
               <p className="font-bold uppercase text-[18px] leading-0">
-                $ {totalPrice}
+                &#8373; {totalPrice}
               </p>
             </div>
             <div className="flex justify-between items-center">
@@ -70,7 +70,7 @@ export default function CheckoutPage() {
                 Shipping
               </p>
               <p className="font-bold uppercase text-[18px] leading-0">
-                $ {shippingFee}
+                &#8373; {shippingFee}
               </p>
             </div>
             <div className="flex justify-between items-center">
@@ -78,7 +78,7 @@ export default function CheckoutPage() {
                 Vat (Included)
               </p>
               <p className="font-bold uppercase text-[18px] leading-0">
-                $ {vat}
+                &#8373; {vat}
               </p>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function CheckoutPage() {
               Grand total
             </p>
             <p className="font-bold uppercase text-[18px] leading-0 text-[#D87D4A]">
-              $ {vat + shippingFee + totalPrice}
+              &#8373; {vat + shippingFee + totalPrice}
             </p>
           </div>
           <button className="bg-[#D87D4A] text-[#FFFFFF] text-[13px] font-bold leading-px uppercase h-12 py-[15px] px-auto cursor-pointer hover:bg-[#FBAF85]" form="checkoutForm">

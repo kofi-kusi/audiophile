@@ -53,7 +53,7 @@ export default function CartModal({ setIsOpen }) {
                 />
                 <div className="flex flex-col gap-2">
                   <h6 className="font-bold leading-[15px]">{item.name}</h6>
-                  <p className="text-sm font-bold opacity-50">$ {item.price}</p>
+                  <p className="text-sm font-bold opacity-50">&#8373; {item.price}</p>
                 </div>
               </div>
               <div className="flex justify-between p-[7px] w-20 bg-[#F1F1F1] text-[13px]">
@@ -78,7 +78,7 @@ export default function CartModal({ setIsOpen }) {
       </div>
       <div className="flex justify-between items-center">
         <p className="font-[400px] opacity-50 leading-[25px] uppercase">Total</p>
-        <h6 className="font-bold text-[18px] leading-0">$ {totalPrice}</h6>
+        <h6 className="font-bold text-[18px] leading-0">&#8373; {totalPrice}</h6>
       </div>
       <button className="bg-[#D87D4A] cursor-pointer w-full py-[15px] px-16 hover:bg-[#FBAF85] text-[13px] text-white tracking-px uppercase" onClick={handleCheckout}>checkout</button>
     </div>
