@@ -3,7 +3,7 @@ import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
-import CheckoutPage from "./pages/CheckoutPage"
+import CheckoutPage from "./pages/CheckoutPage";
 import LoginPage from "./pages/auth/login";
 import SignupPage from "./pages/auth/signup";
 
@@ -17,14 +17,15 @@ const router = createBrowserRouter([
         path: ":category",
         Component: CategoryPage,
       },
-      { path: ":category/:slug", Component: ProductPage},
+      { path: ":category/:slug", Component: ProductPage },
       { path: "checkout", Component: CheckoutPage },
-      { path: "user/",
-        children: [
-          { path: "login", Component: LoginPage},
-          { path: "signup", Component: SignupPage}
-        ]
-      },
+    ],
+  },
+  {
+    path: "user/",
+    children: [
+      { path: "login", Component: LoginPage },
+      { path: "signup", Component: SignupPage },
     ],
   },
 ]);
