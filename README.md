@@ -71,7 +71,7 @@ Frontend:
 - **Node.js** (recommended: v20+)
 - **npm** (comes with Node)
 
-Backend (optional for the UI, required if you want the API/auth/email flows):
+Backend (required for UI, API/auth/email flows):
 
 - **Python** (recommended: 3.11+)
 - **PostgreSQL** (recommended: 15+)
@@ -82,8 +82,6 @@ Optional tools:
 - **uv** (fast Python package manager; the backend also works with plain `pip`)
 
 ### Local setup
-
-The frontend currently uses local product data from `frontend/src/data.json`, so you can run the UI without the backend.
 
 #### Frontend (Vite + React)
 
